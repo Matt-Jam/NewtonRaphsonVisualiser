@@ -23,7 +23,7 @@ class NewtonRaphson:
 def sqaure(x: float) -> float:
     return x**2 - 2*x - 4
 
-test = NewtonRaphson(sqaure,2)
+test = NewtonRaphson(sqaure,10)
 
 t = np.linspace(-10,10,10000)
 fig, ax = plt.subplots()
@@ -31,9 +31,9 @@ ax.plot(t,sqaure(t))
 x = []
 y = []
 for i in range(10):
-    x += [test.func(),test.func()]
-    y += [test.func(), test.iterate()]
-
+    x += [test.a,test.a]
+    y += [0, test.func()]
+    test.iterate()
 ax.spines['left'].set_position('zero')
 
 ax.plot(x,y)
